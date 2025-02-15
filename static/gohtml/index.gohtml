@@ -1,0 +1,14 @@
+{{ template "header" . }}
+
+<div class="wrapper">
+  <div class="container">
+    <form class="form">
+      <button onClick="window.location.href='/send_sms_cn'" type="button">CN SEND SMS</button><br /><br />
+      <button onClick="window.location.href='/send_sms_us'" type="button">US SEND SMS</button><br /><br />
+      <button onClick="window.location.href='/history_cn'" type="button">CN HISTORY</button><br /><br />
+      <button onClick="window.location.href='/history_us'" type="button">US HISTORY</button><br /><br />
+    </form>
+  </div>
+</div>
+
+{{ template "footer" . }}

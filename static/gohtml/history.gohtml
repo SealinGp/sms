@@ -1,0 +1,23 @@
+{{ template "header" . }}
+
+<div class="wrapper">
+  <div class="container">
+    <form class="form">
+      <button onClick="window.location.href='/'" type="button">RETURN</button><br /><br /><br />
+        {{ range .histories }}
+          <label>
+            <button type="button">[{{ .ID }}] {{ .RecordTime }}</button>
+            <button type="button">Sender [{{ .Sender }}]</button>
+            <button type="button">Phone [{{ .Phone }}]</button>
+            <button type="button">Time [{{ .Time }}]</button>
+            <button type="button">SentTime [{{ .SentTime }}]</button>
+            <input id="data" type="text" title="{{ .Message }}" value="{{ .Message }}" readonly>
+          </label>
+        {{ else }}
+          <button type="button">EMPTY</button><br /><br />
+        {{ end}}
+    </form>
+  </div>
+</div>
+
+{{ template "footer" . }}

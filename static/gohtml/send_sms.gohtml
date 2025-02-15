@@ -1,0 +1,21 @@
+{{ template "header" . }}
+
+<div class="wrapper">
+  <div class="container">
+    <form class="form" action="{{ .url }}" method="post">
+      <button onClick="window.location.href='/'" type="button">RETURN</button><br /><br /><br />
+      <label>
+        <input name="sender" type="text" placeholder="Sender" value="web" required>
+      </label>
+      <label>
+        <input name="phone" type="text" placeholder="Phone" value="" required>
+      </label>
+      <label>
+        <input name="message" type="text" placeholder="Message" value="" required>
+      </label>
+      <button type="submit" id="login-button" name="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+{{ template "footer" . }}
