@@ -1,23 +1,25 @@
 package config
 
 type Model struct {
-	BrandName string        `ini:"brand_name"`
-	Prod      bool          `ini:"prod"`
-	SerialCN  SerialModel   `ini:"serial-cn"`
-	SerialUS  SerialModel   `ini:"serial-us"`
-	Server    ServerModel   `ini:"server"`
-	Session   SessionModel  `ini:"session"`
-	Database  DatabaseModel `ini:"database"`
-	Log       LogModel      `ini:"log"`
-	Security  SecurityModel `ini:"security"`
+	BrandName     string          `ini:"brand_name"`
+	Prod          bool            `ini:"prod"`
+	SerialDevices []SerialDevice  `ini:"-"`
+	Server        ServerModel     `ini:"server"`
+	Session       SessionModel    `ini:"session"`
+	Database      DatabaseModel   `ini:"database"`
+	Log           LogModel        `ini:"log"`
+	Security      SecurityModel   `ini:"security"`
 }
 
-type SerialModel struct {
+type SerialDevice struct {
 	Name                    string `ini:"name"`
+	DevicePath              string `ini:"device_path"`
 	Baud                    int    `ini:"baud"`
 	SendQueueSize           int    `ini:"send_queue_size"`
 	HeartbeatSendInterval   uint   `ini:"heartbeat_send_interval"`
 	HeartbeatReceiveTimeout uint   `ini:"heartbeat_receive_timeout"`
+	SelfPhone               string `ini:"self_phone"`
+	Region                  string `ini:"region"`
 }
 
 type ServerModel struct {
